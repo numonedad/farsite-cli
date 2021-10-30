@@ -1,0 +1,288 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "defaultTitle",
+    "description": "defaultDescription",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "https://farsite.online"
+    }
+  ],
+  "paths": {
+    "/api/1.0/ships/{name}/slots": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector ie. 87307",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of the planet",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/1.0/universe/planets/{name}/sectors/": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector ie. NEX-3",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of the planet",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    },
+    "/static/starmap//FarsiteOpenSpaceTest.json": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "default": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    },
+    "/api/1.0/time": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "text/html; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    },
+    "/api/1.0/pilots/{name}/list": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector ie. 660314",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of the planet",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    },
+    "/api/1.0/contracts": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    },
+    "/api/1.0/users/": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    },
+    "/api/1.0/components/originals": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    },
+    "/api/1.0/config/": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector"
+          }
+        },
+        "servers": [
+          {
+            "url": "https://farsite.online"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://farsite.online"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "http://yourauthurl.com",
+            "scopes": {
+              "scope_name": "Enter your scopes here"
+            }
+          }
+        }
+      }
+    }
+  }
+}

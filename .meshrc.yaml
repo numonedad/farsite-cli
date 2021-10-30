@@ -1,0 +1,10 @@
+sources:
+  - name: identity
+    handler:
+      openapi:
+        source: ./swagger.json
+        operationHeaders:
+          Authorization: "Bearer {context.headers.authorization}"
+          Authorization-Cookie: Token {context.cookies.authorization}
+          #Authorization: Token {env.MY_API_TOKEN}
+          #Authorization: Bearer {context.headers['authorization']}

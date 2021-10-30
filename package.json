@@ -1,0 +1,17 @@
+{
+  "name": "graphql-mesh",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "mesh dev --port 6001"
+  },
+  "dependencies": {
+    "@graphql-mesh/cli": "0.41.0",
+    "@graphql-mesh/openapi": "0.18.18",
+    "axios": "^0.24.0",
+    "graphql": "15.4.0",
+    "yargs": "^17.2.1"
+  }
+}
