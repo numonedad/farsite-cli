@@ -48,10 +48,64 @@ const getScheme = async () => {
 }
 
 const resourceName = (config, id) => {
+  if (!config.Resources[id]) {
+    return id
+  }
   return config.Resources[id].code
 }
 
-module.exports = async(userid) => {
+// https://farsite.online/api/1.0/universe/sectors/my
+const listSectors = async () => {
+  try {
+    const { data } = await axios.get(v.BaseUrl + '/universe/sectors/my', opts);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+let opts = {}
+
+const produce = async(userid, options) => {
+  opts = options
+
+  const config = await getConfig();
+  const scheme = await getScheme();
+  const sectors = await listSectors();
+
+  let deposit = {};
+  let spot = {};
+
+  sectors.forEach(( sector ) => {
+    let d = sector.resources.deposits
+    d.forEach((id) => {
+      let key = resourceName(config, id);
+      if (!deposit[key]) {
+        deposit[key] = 0;
+      }
+      deposit[key]++;
+    });
+  })
+
+  sectors.forEach(( sector ) => {
+    let d = sector.resources.spots
+    d.forEach((id) => {
+      let key = resourceName(config, id);
+      if (!spot[key]) {
+        spot[key] = 0;
+      }
+      spot[key]++;
+    });
+  })
+
+  return {
+    deposit, spot
+  }
+}
+
+const consume = async(userid, options) => {
+  opts = options
+
   const config = await getConfig();
   const scheme = await getScheme();
 
@@ -68,6 +122,11 @@ module.exports = async(userid) => {
       resources[key]++
     }
   })
-  console.log('resources', resources)
+  return resources
 
+}
+
+module.exports = {
+  consume: consume,
+  produce: produce,
 }
