@@ -33,10 +33,7 @@ var resources = async(verbose) => {
   }
   let summary = { ...consume }
   for (key in summary) {
-    if (!produce.deposit[key]) {
-      continue
-    }
-    if (summary[key] <= produce.deposit[key]) {
+    if (produce.deposit[key] || produce.spot[key]) {
       delete summary[key]
     }
   }
@@ -47,7 +44,6 @@ var resources = async(verbose) => {
 }
 
 function printer(obj, sectors) {
-  console.log('Resources needed\n==========');
   for (key in obj) {
     let line = key + " " + obj[key] + " ";
     if (sectors[key]) {
