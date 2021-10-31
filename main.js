@@ -40,16 +40,27 @@ var resources = async(verbose) => {
       delete summary[key]
     }
   }
-  printer(summary);
+
+  let sectors = await planets();
+
+  printer(summary, sectors);
 }
 
-function printer(obj) {
+function printer(obj, sectors) {
   console.log('Resources needed\n==========');
   for (key in obj) {
-    console.log(key, obj[key]);
+    let line = key + " " + obj[key] + " ";
+    if (sectors[key]) {
+      line += Object.keys(sectors[key].mix);
+    }
+    console.log(line);
   }
 }
 
 if (argv._.includes('resources')) {
   resources(argv.verbose)
+}
+
+if (argv._.includes('planets')) {
+  planets(argv.verbose)
 }
