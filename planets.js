@@ -37,10 +37,11 @@ const getConfig = async () => {
 }
 
 const resourceName = (config, id) => {
-  if (!config.Resources[id]) {
+  let match = config.Resources.find(res => res.id == id)
+  if (match == undefined) {
     return id
   }
-  return config.Resources[id].code
+  return match.code
 }
 
 const planets = async () => {
